@@ -1,9 +1,9 @@
 # spirit-deathnote
- Exercício individual de customização de um perfil do site spirit fanfic focado em utilizar apenas CSS como ferramenta para elaboração de criativos recursos de estilo em homenagem à série Death Note. 
+ Exercício prático de CSS
+ 
+ Customização de um perfil de usuário do site spirit fanfic focado na elaboração criativa de recursos de estilo em homenagem à série Death Note utilizando-se apenas de soluções em CSS.
 
- O arquivo principal onde podemos ver a página é o plas2.html.
-
- Esse arquivo estrutura a moldura de página em que trabalhei minhas experimentações em CSS.
-
-Basicamente é uma cópia de meu perfil no site num dado momento.
+ PLAS2.HTML
+ É o arquivo principal onde podemos ver a página.
+ Esse arquivo estrutura a página estática de exibição do perfil de usuário   Basicamente é uma cópia de meu perfil no site num dado momento.
 
