@@ -1,0 +1,10 @@
+/* Código principal do style
+ * Autor: Pedro Lázaro
+ * */
+ 
+ @import url(generic.css);
+ @import url(backtop.css);
+ @import url(naves.css);
+ @import url(upcontent.css);
+ @import url(downcontent.css);
+ @import url(menu_direito.css);

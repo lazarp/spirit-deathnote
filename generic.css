@@ -1,0 +1,249 @@
+/* Código modularizado da parte geral do style
+	Autor: Pedro Lázaro
+*/
+/*TABLE OF CONTENTS
+ * barras de rolagem
+ * seleção de elementos da base
+ * fontes
+ * body 
+ * Elementos gerais
+ * 		admin
+ * 		ativo
+ * 		link
+ * 		spoiler
+ * 			spoiler-top
+ * 				a
+ * 			spoiler-visible
+ * 			spoiler-box
+ * 		fieldset
+ * 			legend
+ * 				first-letter
+ * */
+
+
+/*========== GERAL ====================================================*/
+
+
+/*BARRAS DE ROLAGEM e selecao*/
+::-webkit-scrollbar{/*a barra completa*/
+	width:.4em;
+	height:.8em;
+}
+::-webkit-scrollbar-track{ /*caminho da barra*/
+	background:black;
+	border:2px solid transparent;
+	background-clip: content-box;  
+}
+::-webkit-scrollbar-track:horizontal{
+	background:transparent;
+}
+::-webkit-scrollbar-corner{
+	background:transparent;
+}
+::-webkit-scrollbar-thumb{ /*haste que percorre a barra*/
+	background-color: #7F1313;
+	border-radius: 20px;
+}
+/*========== SELEÇÃO ELEMENTOS DA BASE ================================*/
+#base ::selection{ 
+background-color: #7f1313; 
+color: white; 
+
+} 
+
+#base ::-moz-selection{ 
+background-color: #fff; 
+color: #000; 
+
+} 
+/*========== FONTES  ==================================================*/
+
+/*FONTE PLASNOTE*/ 
+@font-face {
+	font-family: "plasnote";
+	src: url('https://dl.dropboxusercontent.com/s/2bp94oj15ohb2c5/plasnote.ttf?raw=1') format("truetype");
+	/*src: url("plasnote.ttf")*/
+}
+
+/*lembrar de criar variáveis para fontes e cores*/
+/*========== CORPO  ===================================================*/	
+	
+body {
+	background: black;
+	display:flex;
+		flex-direction:column;
+}
+
+/*========== ELEMENTOS GERAIS  ========================================*/
+
+.admin{
+	color: red;;
+	font-family: georgia!important;
+	font-size: 10px!important;
+}
+.admin:hover{}
+.ativo{}
+.ativo:hover{}
+.link{
+	color: #7F1313;
+}
+.link:hover{
+	text-decoration:underline;
+}
+
+a, body {
+	color: #000000;
+}
+
+a:hover {
+    color: #cccccc;
+}
+
+/*SPOILER -------------------------------------------------------------*/
+
+div.spoiler{
+	background: url(https://dl.dropboxusercontent.com/s/3bo0ggogvtpq9o8/corner1.png), url(https://dl.dropboxusercontent.com/s/tnmilmzy1y9r1xn/corner2.png);
+	background-size:auto 48px, auto 48px;
+	background-repeat:no-repeat, no-repeat;
+	background-position: left top, right bottom;
+	border-style:none;
+	padding: 15px 20px 15px 20px;
+}
+div.spoiler-top{
+	background:transparent;
+	text-align:center;
+	line-height: 10px;
+	position:relative;
+}
+.spoiler-top:before{
+	position:absolute;
+	display:block;
+	content:"";
+	top:0;
+	left:10%;
+	width:25%;
+	height:150%;
+	background:ghostwhite;
+	transform: skew(30deg);
+	border:1px solid black;
+	opacity:0;
+}
+.spoiler-top:after{
+	opacity:0;
+	position:absolute;
+	display:block;
+	content:"";
+	top:0;
+	right:0;
+	width:35%;
+	height:400%;
+	background:url(https://dl.dropboxusercontent.com/s/f110ciop9akjiy5/swirlSpoiler.png) no-repeat 30% top;
+	background-size:contain;
+	transform:translate(0px,-20%) scale(0.8);
+}
+
+div.spoiler-top a{
+	color:Black;
+	font-size:16px!important;
+	font-size-adjust:0.48;
+	text-transform:lowercase;
+	font-variant:small-caps;
+	font-family:georgia!important;
+	font-weight:100;
+	transition: letter-spacing 2s ease;
+}
+div.spoiler-top a:hover{
+	letter-spacing:2px;
+	transition: letter-spacing 2s ease;
+}
+.spoiler-top a:focus{
+	text-decoration:none;
+	color: #7f1313!important;
+}
+div.spoiler-visible{
+	margin-top:10px;
+	font-family:georgia;
+	font-size:14px;
+	background: rgba(0,0,0,0.2);
+	border-radius:2px;
+	color:black;
+	text-align:center;
+	position:relative;
+}
+
+div.spoiler-box{
+	background:transparent;
+}
+
+/*FIELDSET ------------------------------------------------------------*/
+fieldset {
+    color: black;
+    border:1px dashed black;
+}
+fieldset div{
+	font-family: candara, georgia;
+    font-size:14px;
+    line-height:1;
+}
+fieldset textarea{
+	margin-top:1%;
+	resize:vertical;
+}
+fieldset  legend{
+	color: black;
+	font-family: Candara, Georgia;
+	font-size:14px!important;
+	text-transform:capitalize!important;
+	font-size-adjust:0.48;
+}
+fieldset  legend:first-letter{
+	color: #7F1313;
+	font-family: Georgia;
+	font-size:18px!important;
+	font-size-adjust:0.48;
+}
+
+#baixo {
+	border-top: 1px solid white;
+	background-color: transparent !important;
+	color: white;
+}
+
+#baixo a {
+	color: white;
+	background-color: white !important;
+}
+
+
+
+
+/* ####################################################################### */
+/* Estilos que pertencem ao Conteúdo do Site                               */
+
+/* Elementos Condensados                                                   */
+
+
+.img-rounded{
+	transition: filter 2s ease;
+}
+.img-rounded:hover{
+	-webkit-filter: invert(.8) hue-rotate(90deg) contrast(3);
+    filter: invert(.8) hue-rotate(90deg) contrast(3);
+    transition: filter 2s ease;
+}
+
+/*========== BARRA DAS NOTIFICAÇÕES ===================================*/
+/*Só estou resolvendo um problema do mobile. Não é para editar nada dessa barra, pois faz parte do site e não do perfil*/
+@media only screen and (max-width: 767px){
+	.navbar-fixed-top{
+		width:100%!important;
+		position:fixed!important;
+	}
+}
+/* Elementos distoantes entre o navbar correto e o navbar incorreto
+ * perspective-orgigin, transform-origin
+	* certo:153px 25px
+	* errado:447.5px 25px
+ * width
+ * 
+ * */

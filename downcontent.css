@@ -1,0 +1,374 @@
+/* ####################################################################### */
+/* Plas fev/mar/abr 2017                                      */
+/* template para perfil do social spirit                 */
+                                                                         
+/* ####################################################################### */
+
+/* ####################################################################### */
+
+
+
+
+/*######################*/
+
+/* ################## BOX CONTEUDO ##################################################### */
+
+section.boxConteudo{
+	margin:0px; /*para nivelar a margem esquerda com o boxUsuario*/
+	background: transparent;
+}
+
+.boxConteudo .texto span{
+	color:black!important;
+}
+
+.boxConteudo td{ /*caixa que envolve todo o jornal*/
+	color:black;
+	background:transparent;
+	font-family: georgia;
+	font-size:10px;
+	border:1px dashed black;
+}
+.boxConteudo td a:link{
+	text-decoration:underline;
+	font-family: georgia!important;
+	font-size:10px!important;
+}
+
+/*########################################################*/
+section.boxConteudo b{ /*postado em + "item"*/
+	font-family: Georgia!important;
+	font-size: 10px!important;
+	text-transform:uppercase;
+	font-size-adjust: 0.50;
+	color:black;
+}
+section.boxConteudo a.link:hover{ /*links dentro da section boxConteudo*/
+	color:white!important;
+}
+
+
+.boxConteudo .titulo:first-letter{ /*parece que é atualizações de usuario*/
+	color: #7F1313!important;
+	font-size:14px;
+}
+.boxConteudo .titulo{ /*parece que é atualizações de usuario*/
+	font-size-adjust: 0.50;
+	text-transform: uppercase!important;
+	font-family: Georgia;
+	font-size: 10px!important;
+	font-weight:100;
+	color:white;
+}
+/*========== BOX H2 ===================================================*/
+/*São as caixas do corpo do boxConteudo.*/
+/*
+ * boxConteudo h2
+ * 		span
+ * 		.tituloPrincipal
+ * 			strong
+ * 		a
+ * 			.ativo
+ */
+ 
+section.boxConteudo h2.tituloPrincipal{
+	padding-left:20%;
+	text-align:left;
+	width:auto;
+	font-size:14px!important;
+	font-family:calibri, georgia;
+	background: url(https://dl.dropboxusercontent.com/s/tsqs8zfn65923nu/boxh1.png) no-repeat, url(https://dl.dropboxusercontent.com/s/tsqs8zfn65923nu/boxh1.png) no-repeat, url(https://dl.dropboxusercontent.com/s/5k5qx7bsbpzp06q/blackchain2.png) repeat-x, url(https://dl.dropboxusercontent.com/s/5k5qx7bsbpzp06q/blackchain2.png) repeat-x;
+	background-size: 80% 100%, 80% 100%, 40% 20%, 40% 20%;
+	background-position: -302% center, 50% center, center 10%, center 90%; /*horizontal vertical*/
+	position:relative;
+	overflow:hidden;
+	color:white!important;
+	transition: transform 3s ease, color 2s ease, background-position 3s ease;
+}
+
+section.boxConteudo h2.tituloPrincipal:hover{
+	color:black!important;
+	background-position:-302% center, 400% center, 90% 10%, 90% 90%;
+	transition: color 2s ease, background-position 3s ease;
+}
+
+section.boxConteudo h2.tituloPrincipal strong{ /*parece que a ordem dos layers after before e elemento original não é afetada pelo z-index. Tentei de todo jeito e só recorrendo ao elemento strong foi que consegui colocar a palavra para cima*/
+	position:relative;
+	font-size:14px;
+	font-size-adjust:0.40;
+	font-family:calibri, georgia;
+	font-weight:lighter;
+	font-variant:small-caps;
+	z-index:1;
+	color:white;
+	transition: color 2s ease;
+}
+section.boxConteudo h2.tituloPrincipal:hover > a.ativo strong, section.boxConteudo h2.tituloPrincipal:hover > strong{
+	color:black;
+	transition: color 2s ease;
+}
+section.boxConteudo h2.tituloPrincipal:before, section.boxConteudo h2.tituloPrincipal:after{
+	position:absolute;
+	display:block;
+	content:"";
+}
+
+section.boxConteudo h2.tituloPrincipal:before{
+	background: url(https://dl.dropboxusercontent.com/s/589ebeyuvvnarch/swirl2_left.png) no-repeat, url(https://dl.dropboxusercontent.com/s/hylr7n3axlnlqix/tarjapreta.png) no-repeat, url(https://dl.dropboxusercontent.com/s/5n62qbf0bb9wqjl/swirl2.png) no-repeat;
+	background-size: 14% 70%, 11% 100%, 15% 80%;
+	background-position:left center, left center, right center;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:1;
+}
+section.boxConteudo h2.tituloPrincipal:after{/*tive que recorrer ao after pq o background que desliza no tituloPrincipal não tem comportamento linear. Para os valores de porcentagem que eu precisava, o tamanho dele é irregular e seu deslocamento também.*/
+	top:0;
+	right:-5%;
+	width:20%;
+	height:100%;
+	transform:skew(50deg);
+	background:black;
+	z-index:0;
+}
+/*H2 MOBILE -----------------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+		section.boxConteudo h2.tituloPrincipal{
+			background:black;
+			text-align:center;
+			padding-left:0;
+		}
+		section.boxConteudo h2.tituloPrincipal:hover, section.boxConteudo h2.tituloPrincipal:hover > a.ativo strong, section.boxConteudo h2.tituloPrincipal:hover > strong {
+			color:white;
+		}
+		section.boxConteudo h2.tituloPrincipal:before, section.boxConteudo h2.tituloPrincipal:after{
+			display:none;
+		}
+		
+}
+
+
+/*========== BOX CONTEUDO H1 ==========================================*/
+/*É o primeiro box, logo abaixo dos botões adicionar amigo e observar usuário */
+/*Atenção: h1 faz parte do #boxUsuario.boxConteudo; Já o
+ *  h2 faz parte do section.boxConteudo;
+ * São duas coisas diferentes.
+ * */
+#boxUsuario.boxConteudo h1{
+	position:relative;
+	border-radius:3px;
+	margin-bottom:10px!important;
+	position:relative;
+	text-align:center;
+	color:white;
+	width:auto;
+	background: url(https://dl.dropboxusercontent.com/s/pv8sjj2d5q9jfy0/horizontal_left_inverted.png) no-repeat, url(https://dl.dropboxusercontent.com/s/6iy889s2vt4lqz7/horizontal_right_inverted.png) no-repeat, url(https://dl.dropboxusercontent.com/s/4lzbkkxitkt6wv6/horizontal_left.png) no-repeat, url(https://dl.dropboxusercontent.com/s/0tvbj8qzn2l0943/horizontal_right.png) no-repeat, url(https://dl.dropboxusercontent.com/s/hylr7n3axlnlqix/tarjapreta.png) no-repeat, url(https://dl.dropboxusercontent.com/s/hylr7n3axlnlqix/tarjapreta.png) no-repeat, url(https://dl.dropboxusercontent.com/s/5k5qx7bsbpzp06q/blackchain2.png) repeat-x, url(https://dl.dropboxusercontent.com/s/5k5qx7bsbpzp06q/blackchain2.png) repeat-x;
+	background-position: 41.25% 5%, 58.75%  5%, 41.25% 95%, 58.75% 95%, left center, right center, 0% 10%, 0% 90%;
+	background-size:  15% 25%, 15% 25%, 15% 25%, 15% 25%, 50% 100%, 50% 100%,  40% 20%, 40% 20%;
+	z-index:0!important;
+	transition: background-position 4s ease, color 4s ease;
+}
+#boxUsuario.boxConteudo h1:hover{
+	color:black;
+	background-position: 6% 5%, 94% 5%, 6% 95%, 94% 95%, -60% center, 160% center, 0% 10%, 0% 90%;
+	transition: background-position 4s ease, color 2s ease;
+}
+#boxUsuario.boxConteudo h1:before{ /*segmento da esquerda*/
+	opacity: 0;
+	content:"L, do you know Gods of Death love apples?";
+	position:absolute;
+	display:block;
+	top:115%;
+	left:35.5%;
+	font-size:20px;
+	font-family:plasnote;
+	color:black;
+	text-align:center;
+	transition: opacity 2s ease;
+}
+#boxUsuario.boxConteudo h1:hover:before{
+	opacity: 1;
+	transition: opacity 2s ease;
+}
+#boxUsuario.boxConteudo h1:after{ /*segmento da direita*/}
+#boxUsuario.boxConteudo h1:hover:after{}
+#boxUsuario.boxConteudo h1.tituloPrincipal a{
+	position:relative;
+	z-index:4!important; /*z-index só funciona com elementos posicionados! pqp codeiros fdp de css! Demorei milenios para saber disso*/
+}
+#boxUsuario.boxConteudo h1:hover > a{
+	color:black!important;
+	transition: color 2s ease;
+}
+.boxConteudo h1 a{ 
+	text-decoration: none!important;
+	
+	color:white!important;
+	text-align:center!important;
+	font-family: georgia!important;
+	font-size: 20px!important;
+	font-weight:100;
+	font-size-adjust: 0.48;
+	padding: 0px;
+	z-index:2;
+	transition: color 3s ease;
+}
+
+/*H1 MOBILE -----------------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+	#boxUsuario.boxConteudo h1{
+		background:black;
+	}
+	#boxUsuario.boxConteudo h1:hover, #boxUsuario.boxConteudo h1:hover > a{
+		color:white!important;
+	}
+	#boxUsuario.boxConteudo h1:after, #boxUsuario.boxConteudo h1.before{
+		display:none;
+	}
+}
+
+/*##############  VEJA TODOS OS JORNAIS DESSE USER ###########################*/
+section.boxConteudo div.baixo{ /*BOX*/
+	text-align:center;
+	transition: letter-spacing 1s ease;
+}
+section.boxConteudo div.baixo a{/*PALAVRAS*/
+	font-size-adjust: 0.50;
+	text-transform: uppercase!important;
+	font-family: Georgia;
+	font-size: 10px!important;
+	font-weight:100;
+}
+section.boxConteudo div.baixo i.fa.fa-caret-right{ /*setinha*/
+	color:black;
+	font-size-adjust: 0.50;
+	text-transform: uppercase!important;
+	font-size: 10px!important;
+	font-weight:100;
+}
+section.boxConteudo div.baixo a:hover{
+	text-decoration:none!important;
+	color:black;
+}
+section.boxConteudo div.baixo:hover{
+	letter-spacing: 2px;
+	transition: letter-spacing 1s ease;
+}
+/*############ CAIXAS DOS ITENS ###########*/
+
+.boxConteudo p{ /*caixa dos items pares e impares ~embaixo de atualizações de usuário*/
+	background:transparent!important;
+	font-family: Candara, georgia;
+	font-size: 10px;
+	font-size-adjust:0.38;
+}
+.boxConteudo p a{ /*conteudo das caixas pares e impares exceto o texto ">item:"*/
+	font-family: Candara, georgia!important;
+	font-size: 10px!important;
+	text-transform:none;
+}
+.boxConteudo p.textoBg2{
+
+}
+/*############### PAGINAÇÃO ############################*/
+section.boxConteudo div.paginacao{
+}
+section.boxConteudo div.paginacao div.itens.clearfix a{
+}
+/*###########################################*/
+
+.boxConteudo .btn{ /*BOTOES PERSONALIZAR PERFIL*/}
+.boxConteudo .cadastroDestaque{}
+.boxConteudo .boxMenuDireito .tituloMenuDireito{}
+.boxConteudo figure img{}
+.boxAnterior{}
+.boxConteudo .boxCategoria{}
+
+.user-card>.avatar>img{/*provavelmente modifica o avatar do cartao id*/}
+.thumbnail a>img,.thumbnail>img{}
+.boxCategoria img{/*nada*/}
+figure img{/*nada*/}
+.boxConteudo .post { /*talvez um tweet?*/}
+.boxConteudo .post .textoComentario{}
+.boxConteudo .post span{}
+.boxConteudo .post span a{}
+.boxConteudo .boxUsuario{}
+.boxConteudo .baixo img{}
+.boxConteudo .baixo select{}
+	
+.boxConteudo .textoBg1{ /*E a caixa que tem a foto do perfil, o corpo do jornal e os itens impares*/
+}
+
+/*##################################################################*/
+
+.boxConteudo .textoBg1, .boxConteudo .texto, .boxConteudo .textoBg2{
+	background: transparent;
+	color:black!important;
+	font-family: Georgia!important;
+	font-size:15px!important;
+}
+
+.boxConteudo  tr { /*só o frame do jornal*/	/*precisa alinhar com a caixa das informações*/	}
+.boxConteudo tr a{ /*links de dentro do corpo do jornal*/}
+.boxConteudo tr span{/* Postado em e (0)*/}
+.boxConteudo tr span a{/*#######permalink e comentários#######*/}
+.boxConteudo .textoBg1:hover, .boxConteudo tr.textoBg1 td:hover{}
+
+.boxConteudo .textoBg1 a{ /*permalink e comentários*/
+	font-family: Georgia;
+	font-size:12px;
+	font-weight:100;
+	
+}
+
+.boxConteudo .textoBg2, .boxConteudo tr.textoBg2 td { /*são só os ITENS PARES?*/
+	background:rgba(0,0,0, 0.2)!important;
+}
+.boxConteudo .textoBg2 a{
+	font-family: Georgia;
+	font-size:12px;
+	font-weight:100;
+}
+.boxConteudo .textoBg2:hover, .boxConteudo tr.textoBg2 td:hover{}
+
+/*========== BOTÕES ===================================================*/
+.boxConteudo .btn-danger{
+	border:1px solid black;
+	border-radius:00px;
+}
+section.boxConteudo .btn-default, section.boxConteudo .btn-default:hover{
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid white;
+}
+
+/*========== QUOTE ====================================================*/
+#quote {
+	color: black;
+	background:transparent;
+	font-size:10px;
+	text-align:center;
+	font-family: candara,Georgia;
+	text-transform:none!important;
+	font-weight:100!important;
+	padding: 3% 10% 3% 10%;
+	position:relative;
+}
+#quote:after{
+	content:"";
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height:100%;
+	background: url(https://dl.dropboxusercontent.com/s/3bo0ggogvtpq9o8/corner1.png) no-repeat, url(https://dl.dropboxusercontent.com/s/tnmilmzy1y9r1xn/corner2.png) no-repeat;
+	background-position: left top, right bottom;
+	background-size: 15% auto, 15% auto;
+}
+#quote .quotetop, .quotemain, strong a{
+	font-family:candara, georgia;
+	font-size: 14px!important;
+}

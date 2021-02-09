@@ -1,0 +1,413 @@
+/*Código modularizado da parte do conteudo superior do style
+ * Autor: Pedro Lázaro
+ * */
+ /*TABLE OF CONTENTS
+  * 
+  * 
+  * */
+  
+/*========== BASE =====================================================*/
+
+#base {
+	background:transparent;
+	position:relative;
+	/*padding-bottom:300px; se quiser colocar alguma imagem no fundo do style*/
+	
+}
+
+/*========== MEIO =====================================================*/
+#meio{ /*engloba toda a página abaixo do cima logo*/
+	border:none;
+	width:1000px;
+	top:0px!important;
+}
+
+#meio span a, #meio span{
+	font-family: Georgia!important;
+	font-size: 10px!important;
+	font-size-adjust:0.48;
+	text-transform:uppercase;
+	color:black;
+}
+#meio span a:hover, #meio span:hover{}
+#meio li{
+	color:black;
+}
+
+#meio a{/*~usuario do box direito, o frame das fotos e permalink e comentários*/
+	color: black;
+}
+#meio a.link{
+	color:  #7F1313;
+}
+
+#meio input {
+    background-color: transparent; /* Cor do fundo */
+    color: black; /* Cor do Texto */
+    border: 1px inset black; /* Tamanho e cor das bordas */
+    border-radius: 00px; /* A propriedade CSS3 border-radius destina-se a definir bordas arredondadas. */
+	font-size:18px;
+	font-family:plasnote;
+    position: relative !important;
+    
+}
+
+#meio textarea { /*caixas em que o usuário escreve, tais como responder comentário, mensagem de solicitação de amizade, etc*/
+    background-color: rgba(255,255,255, 0.7);
+    font-size: 18px!important;
+    color:black!important;
+    font-family:plasnote!important;
+    font-size-adjust:0.48;
+}
+
+/*BOTÕES --------------------------------------------------------------*/
+#meio .btn {}
+
+#meio .btn:hover{}
+
+#meio .btn span, #meio .btn, #meio a.btn, #meio .btn span:hover, #meio .btn:hover, #meio a.btn:hover { /*qualquer botão do meio*/
+	color: white;
+	font-family:georgia!important;
+	font-size:10px;
+	font-size-adjust:0.38;
+	text-transform:uppercase;
+		font-variant:small-caps;
+	background:black;
+}
+
+/*MENUS DROPDOWN ------------------------------------------------------*/
+#meio > ul > li > div > ul.dropdown-menu > li >a {
+    color: #111;
+    background-color: #696969!important;
+    font-size: 8px !important;
+	font-family: Calibri, Candara, serif!important;
+}
+
+#meio .dropdown-menu > li > a:hover{
+    color: #ffffff !important;
+    background: #111 !important;   
+}
+
+/*========== BOXUSUARIO.BOXCONTEUDO ===================================*/
+
+/*BOTÕES SOLICITAR AMIZADE, OBSERVAR USUÁRIO, ETC ---------------------*/
+#boxUsuario.boxConteudo .btn{ /* cada botão entre os botões de observar o usuário, solicitar amizade, etc*/
+	
+	padding:3px 5px 3px 5px;
+	border:0px solid black;
+	
+}
+#boxUsuario.boxConteudo .btn.btn-group{ /*cada botão dentre os acima mencionados exceto o dropdown*/
+	transition: margin 1.2s ease;
+}
+#boxUsuario.boxConteudo .btn.btn-group:hover{
+	margin-right:60px;
+	transition: margin 1.2s ease;
+}
+#boxUsuario.boxConteudo .right.btn-group{ /*container dos botões observar usuário, solicitar amizade, etc*/
+	background:url(https://dl.dropboxusercontent.com/s/l1moo1ye62l6xg5/blackchain.png) repeat-x;
+	background-size:70% 100%;
+}
+
+
+/*BOX COM INFORMAÇÕES DO USUÁRIO --------------------------------------*/
+
+#boxUsuario.boxConteudo{ /*caixa geral que contem o botao de personalizar perfil, o h2 (~modelo), a caixa de informaçoes + fotos, menu do perfil*/
+	display:flex!important;
+		align-items:center!important;
+		justify-content:space-between!important;
+	background:transparent;
+
+
+}
+#boxUsuario.boxConteudo div.textoBg1.clearfix{/*caixa maior que contem as fotos e a caixa de informações*/
+	display:flex!important;
+		align-items:center!important;
+		justify-content:space-between!important;
+	border-radius: 10px;
+	border-left:1px solid black;
+	border-right:1px solid black;
+}
+
+div.left.informacoes{ /*caixa que contem as informaçoes do usuario, mesma coisa que a instrução abaixo*/}
+
+#boxUsuario .informacoes{
+	color:black;
+	width: 60%!important;
+	padding: 20px!important;
+	background:transparent;
+	font-family:Georgia!important;
+	font-size: 10px;
+	font-size-adjust:0.48;
+	text-transform: uppercase;	
+	text-align:center;
+	border: 1px dashed black!important;
+}
+#boxUsuario .informacoes:hover{}
+#boxUsuario .informacoes span.usuario b{ /*so usuario*/
+	letter-spacing:normal!important;
+	font-weight:100!important;
+	transition:color 1s ease!important;
+}
+#boxUsuario .informacoes span.usuario b:hover{ /*aqui só é usuario*/
+	color:red;
+	letter-spacing:normal!important;
+	transition:color 1s ease;
+}
+#boxUsuario .informacoes strong{/*Nome, status, data de nascimento... inclui usuario tb*/
+	transition:letter-spacing 1s ease;
+}
+#boxUsuario .informacoes strong:hover{ /*Nome, status, data de nascimento... inclui usuario tb*/
+	letter-spacing:2px!important;
+	transition:letter-spacing 1s ease;
+}
+
+#boxUsuario .avatar{
+	padding:0px;
+	margin:0px;
+	width:100px;
+}
+#boxUsuario div div.left.avatar div{ /*moldura 1 do avatar*/
+	padding:0px!important;
+}
+#boxUsuario div div div{ /*moldura 2 do avatar*/
+	padding:0px!important;
+}
+#boxUsuario .avatar img{ /*avatar em si*/
+	border-top-left-radius:5px 30px;
+	border-bottom-left-radius:30px 5px;
+	border-bottom-right-radius: 5px 30px;
+	border-top-right-radius:30px 5px;
+	border: 4px solid black!important;
+}
+#boxUsuario div.left.hidden-xs.hidden-sm{/*caixa que contem imagem do foguinho spirit*/
+	width:120px!important;
+}
+img#cphTopo_imgUsuarioFoto{
+	padding-top:0px!important;
+	border-top-left-radius:5px 30px;
+	border-bottom-left-radius:30px 5px;
+	border-bottom-right-radius: 5px 30px;
+	border-top-right-radius:30px 5px;
+	border: 4px solid black!important;
+}
+
+/*MENU PERFIL, ATUALIZAÇÕES, FAVORITOS, ETC ---------------------------*/
+
+#boxUsuario .ativo{
+	border-bottom:1px solid #7f1313!important;
+}
+#boxUsuario .baixo ul{/*todo o menu do perfil em si*/
+	/*margin-top:20px;*/
+	width:100%;
+	border-left: 1px solid black;
+	border-right:1px solid black;
+	border-radius:10px;
+	height:80px;
+	background-color: transparent;
+	color: black !important;
+	text-align: center;
+	font-size: 8px!important; /*nada ainda*/
+	display:flex!important;
+		align-items:center;
+		justify-content:space-between!important;
+}
+
+#boxUsuario .baixo ul:hover > li a{ /*entro na caixa, todas as palavras acendem*/
+	color:white;
+	transition: color 0.3s ease;
+	animation: doorsBounce 0.5s ease 1;
+}
+#boxUsuario .baixo ul:hover > li a:first-letter{
+	color:gray;
+	transition: color 0.5s ease;
+	
+}
+#boxUsuario .baixo ul:hover > li a:before, #boxUsuario .baixo ul:hover > li a:after{ /*quando entro na caixa, os backgrounds das portelas são pintados*/
+	background:black;
+	animation: softStart 1s ease 1;
+}
+
+@keyframes doorsBounce{
+	0%{transform: translate(0px, 5px);}
+	75%{transform:translate(0px, -2px);}
+	100%{transfom: translate(0px, 0px);}
+}
+
+#boxUsuario.boxConteudo div.baixo.baixo-perfil{ /*div no qual o menu do perfil está inserido, ou algo assim*/
+	margin-top:20px;
+	padding:0;
+	width:100%; /*parametrizando a largura, para n ter problema com mobile*/
+}
+#boxUsuario.boxConteudo div.clearfix{
+	width:100%;
+}
+#boxUsuario .baixo ul li{margin:2px;/*caixa de cada palavra do menu do perfil*/
+	position:relative;
+}
+#boxUsuario .baixo ul li a:first-letter{ /* primeira letra de cada palavra do perfil*/
+	font-size: 12px;
+	color: #7F1313;
+	transition: color 0.5s ease;
+}
+#boxUsuario .baixo ul li a{ /*cada palavra do perfil*/
+	padding: 10px 15px 10px 15px!important;
+	letter-spacing: 2px; 
+	margin: 2%; /*2px*/
+	color: black;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif!important;
+	font-size: 8px!important;
+	text-transform: uppercase;
+	text-decoration: none!important;
+	display:block; /*isso aqui que fez o perspective funfar! puta que os pariu codeiro de css*/
+	position:relative;
+	-webkit-perspective: 1000px; /* Chrome, Safari, Opera  */
+	perspective:1000px;
+}
+#boxUsuario .baixo ul li:after{
+	display:block;
+	position:absolute;
+	font-family:plasnote;
+	font-size:16px;
+	text-align:left;
+	padding-top:20%;
+	top:-100%;
+	left:0%;
+	width:100%;
+	height:100%
+	color:black;
+	opacity: 0;
+	transition: opacity 1s ease, transform 2s ease;
+}
+/*Would you
+ * be able to
+ * mess your soul,
+ * commit countless
+ * atrocities
+ * and even abdicate
+ * your own sanity
+ * to make the world
+ * better for all those
+ * who deserve it?*/
+
+#boxUsuario .baixo ul li:nth-child(1):after{
+	padding-left:20%;
+	content:"Would you";
+}
+#boxUsuario .baixo ul li:nth-child(2):after{
+	padding-left:20%;
+	content:"be able to";
+}
+#boxUsuario .baixo ul li:nth-child(3):after{
+	padding-left:7%;
+	content:"mess your own soul,";
+	width:200%;
+}
+#boxUsuario .baixo ul li:nth-child(4):after{
+	padding-left:3%;
+	content:"commit countless";
+}
+#boxUsuario .baixo ul li:nth-child(5):after{
+	padding-left:20%;
+	content:"atrocities";
+}
+#boxUsuario .baixo ul li:nth-child(6):after{
+	content:"and even abdicate";
+	width:200%;
+}
+#boxUsuario .baixo ul li:nth-child(7):after{
+	padding-left:20%;
+	content:"your sanity";
+}
+#boxUsuario .baixo ul li:nth-child(8):after{
+	content:"to make the world";
+	transform: translateX(-2%);
+	width:200%;
+}
+#boxUsuario .baixo ul li:nth-child(9):after{
+	content:"absolutely fair for all those";
+}
+#boxUsuario .baixo ul li:nth-child(10):after{
+	width:200%;
+	content:"who deserve it?";
+	transform: translateX(-2%);
+}
+
+
+#boxUsuario .baixo ul li:hover:after{
+	transform: translateY(-50%);
+	opacity: 1;
+	transition: opacity 2s ease, transform 2s ease;
+}
+
+#boxUsuario .baixo ul li:nth-child(9) {/*livro de visitas*/
+	width:144px;
+}
+
+#boxUsuario .baixo ul li a:hover{/*palavras do menu do perfil*/
+	color:black;
+	transition: color 0.5s ease;
+}
+
+#boxUsuario .baixo ul li a:before{ /*portela inferior*/
+	content:'';
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:transparent;
+	border:1px solid transparent;
+	z-index:-1;
+	transition: transform 0.5s ease!important;
+}
+#boxUsuario .baixo ul li a:hover:before{
+	background: rgba(0,0,0,1);
+	transform: rotateX(60deg) translate(0%, 70%) scale(1, 0.5);
+	transition: transform 0.5s ease!important;
+}
+#boxUsuario .baixo ul li a:after{ /*portela superior*/
+	content:'';
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:transparent;
+	border:1px solid transparent;
+	z-index:-1;
+	transition: all 0.5s ease!important;
+}
+#boxUsuario .baixo ul li a:hover:after{
+	background: rgba(0,0,0,1);
+	transform: rotateX(-60deg) translate(0%, -70%) scale(1,0.5);
+	transition: transform 0.5s ease!important;
+}
+.boxConteudo .baixo { /* background do menu iniciado por PERFIL */}
+.boxConteudo .baixo select { /*box com a mensagem "Perfil de Plas" que só aparece quando o screen diminui*/
+	width:100%;
+	margin-top:10px;
+}
+
+/*MOBILE*/
+
+@media only screen and (max-width: 767px) {
+		#boxUsuario .baixo ul{ /*para ocultar o menu perfil desktop, evitando assim a duplicata de menus na versão mobile, uma vez que o menu perfil mobile obrigatoriamente deve estar presente na versão mobile*/
+			display:none!important;
+			visibility:hidden!important;
+		}
+		#boxUsuario.boxConteudo div.baixo.baixo-perfil{ /*para tirar um espaço em branco que tinha entre o box de infos do usuário e o menu perfil mobile*/
+			margin-top:0;
+		}
+}
+/*FAVORITOS - ESPECIFICO ----------------------------------------------*/
+.boxConteudo .baixo.baixo-select .ativo{ /*especificamente pinta dessa cor a palavra ativa entre história e styles no menu favoritos. Pode mudar outras coisas, mas ainda não vi.*/
+	color: #7f1313!important;
+}
+.boxConteudo .baixo.baixo-select a:hover{/*especificamente faz o hover das palavras histórias e styles ficar sublinhado no menu do favoritos */
+	text-decoration:underline!important;
+}
+
+

@@ -1,0 +1,181 @@
+/*Código modularizado da parte de trás e do banner do style
+ * Autor: Pedro Lázaro
+ * */
+/* TABLE OF CONTENTS
+ * fundo
+ * cima
+ * 		before
+ * logo
+ * 		before
+ * 		after
+ */
+
+/*========== FUNDO ====================================================*/
+
+#fundo { /*ADORNOSLATERAIS = trick back*/
+	background: url(https://dl.dropboxusercontent.com/s/cethcjdmlkiv0fe/trick_back.jpg) no-repeat center top, url(https://dl.dropboxusercontent.com/s/mk4m6dnvgoicv3l/fundo_meio.jpg) repeat-y center 350px;
+	background-size:1300px 350px, 1300px 1204px;
+	color: black;
+	animation: softStart 1.5s ease-in-out 1;
+	/*background: white;*/
+	display:flex;
+		flex-direction:column;
+		justify-content:center;
+}
+/*========== CIMA =====================================================*/
+
+#cima{
+	max-width:1000px;
+	max-height:350px; /*tava por aqui...*/
+	position:relative;
+}
+#cima:before{
+	content:"";
+	display:block;
+	height:100%;
+	width:100%;
+	background: url(https://dl.dropboxusercontent.com/s/ws6k6fhpkej553f/new_dnback.png) no-repeat center top;
+	background-size: 100% 100%;
+	position:absolute;
+}
+/*========== LOGO =====================================================*/
+
+#logo{
+	
+	width: 100%;/*a largura vai variar conforme o screen. E o padding fará com que a altura varie proporcionalmente à largura.*/
+	padding-bottom:35%!important; /*truque para que a proporção da logo seja mantida quando a screen mudar de tamanho*/
+	max-height:350px!important;
+	position:relative;
+	animation: softStart 0.3s ease-in-out 1;
+}
+
+#logo:before{/*personagens*/
+	display:block;
+	content:"";
+	max-width:1000px;
+	width:100%;
+	height:100%;
+	/*left:450px;/* EXEMPLO: calc(1000/2 -10/2) ONDE WIDTH_obj = 10*/
+	/*top:150px;/* EXEMPLO: calc(350/2 - 10/2) ONDE HEIGHT_obj= 10 + 25px por causa do deslocamento do aro*/
+	/*background:url(https://dl.dropboxusercontent.com/s/d9twetp6x7st4k2/framenew.png) no-repeat center, url(https://dl.dropboxusercontent.com/s/dm5sij2l5r2rzg4/lista_characters.jpg) no-repeat center, url(https://dl.dropboxusercontent.com/s/lydwpcxrqqbgnxu/dnback_frame.png) no-repeat center, url(https://dl.dropboxusercontent.com/s/oslgt9c7zplb13o/quotes_black.png) no-repeat center, url(https://dl.dropboxusercontent.com/s/6pq3awn9s6vv46u/dnback_behind.png) no-repeat center;*/
+	background: url(https://dl.dropboxusercontent.com/s/r3kxliooichhih9/new_frame_charas.png), url(https://dl.dropboxusercontent.com/s/16fenb9zs0dszxv/lista_characters.jpg), url(https://dl.dropboxusercontent.com/s/uq7afzf12ws4pmk/new_dnback_frame.png), url(https://dl.dropboxusercontent.com/s/oslgt9c7zplb13o/quotes_black.png), url(https://dl.dropboxusercontent.com/s/1kef5mipoieoju8/new_dnback_behind.png);
+	background-repeat: no-repeat, no-repeat, no-repeat,no-repeat, no-repeat;
+	background-size: 100% 28.5714%, 150% 28.5714%, 100% 88.5714%, 100% 171.4285%, 100% 22%;
+	/*background-size: 1000px 100px, 1500px 100px, 1000px 310px, 1000px 600px, 1000px 77px;*/
+	/*valores em pixels: 1000px 100px, 1500px 100px, 1000px 310px, 1000px 600px, 1000px 77px*/
+	/*lembrete: no segundo item da instrução acima os dois valores
+	 * correspondem à metade das dimensões da imagem original.*/
+	/*background-position: 0% 42.8571%, 15% 42.8571%, center 0%, 0% -37.1428%, center bottom; /*posicionamento do character*/
+	/*valores em pixels: 0px 150px, 150px 150px, center 0px, 0px -130px, center bottom*/
+	background-position: 0% 59.9%, -30% 59.9%, center 0%, 0% 50%, center bottom;
+	/*background-position: 0px 150px, 150px 150px, center 0px, 0px -130px, center bottom;*/
+	animation: softStart 1s ease-in-out 1 running, fixStart 1s ease-in-out 1s 1 forwards paused, rotateCharas 200s ease-in-out 3s infinite paused;	
+	position: absolute;	
+	opacity:1;
+	overflow:hidden;
+}
+
+#logo:hover:before{	
+	animation-play-state: running, running, running;
+	
+}
+/*ANIMAÇÃO PARA INICIO SUAVE ------------------------------------------*/
+
+@keyframes softStart{
+	000%{opacity: 0;}
+	100%{opacity: 1;}
+}
+@keyframes fixStart{
+	000%{opacity: 1;}
+	100%{opacity: 0;}
+}
+
+/*ANIMAÇÃO PRINCIPAL - PERSONAGENS + TEXTO ----------------------------*/
+
+/*Sobre a estrutura (ordem visual no código):
+ *  1 transição, 4 ofuscamento;
+ * 	2 revelação, 3 permanencia;
+ * codigo do background-position: primeira moldura, vetor de personagens, fundo falso ~dnback~, quotes, fundo do quotes*/
+ 
+@keyframes rotateCharas{
+	/*----------------------------------- inicio personagem 1 - LIGHT 1*/
+	00.0%, 06.6%{opacity: 0;	background-position: 0% 59.9%, 50% 59.9%,   center 0%, 0% -14%, center bottom; /*posicionamento do character*/}
+	00.5%, 06.4%{opacity: 1; 	background-position: 0% 59.9%, 50% 59.9%,   center 0%, 0% -14%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 2 Ryuzaki*/
+	06.7%, 13.3%{opacity: 0;	background-position: 0% 59.9%, -10% 59.9%,   center 0%, 0% 34%, center bottom; /*posicionamento do character*/}
+	07.2%, 13.1%{opacity: 1;	background-position: 0% 59.9%, -10% 59.9%,   center 0%, 0% 34%, center bottom; /*posicionamento do character*/}	
+	/*----------------------------------- inicio personagem 3 RYUK */
+	13.4%, 20.0%{opacity: 0;	background-position: 0% 59.9%, 110% 59.9%,   center 0%, 0% -62%, center bottom; /*posicionamento do character*/}
+	13.9%, 19.8%{opacity: 1;	background-position: 0% 59.9%, 110% 59.9%,   center 0%, 0% -62%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 4 NAOMI*/
+	20.1%, 26.7%{opacity: 0;	background-position: 0% 59.9%, 130% 59.9%,   center 0%, 0% -78%, center bottom; /*posicionamento do character*/}
+	20.6%, 26.5%{opacity: 1;	background-position: 0% 59.9%, 130% 59.9%,   center 0%, 0% -78%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 5 MISA revisado*/
+	26.8%, 33.4%{opacity: 0;	background-position: 0% 59.9%, -50% 59.9%, center 0%, 0% 66%, center bottom; /*posicionamento do character*/}
+	27.3%, 33.2%{opacity: 1;	background-position: 0% 59.9%, -50% 59.9%, center 0%, 0% 66%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 6 REMU*/
+	33.5%, 40.1%{opacity: 0;	background-position: 0% 59.9%, 90% 59.9%,   center 0%, 0% -46%, center bottom; /*posicionamento do character*/}
+	34.0%, 39.9%{opacity: 1;	background-position: 0% 59.9%, 90% 59.9%,   center 0%, 0% -46%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 7 BEYOND*/
+	40.2%, 46.8%{opacity: 0;	background-position: 0% 59.9%, 10% 59.9%,   center 0%, 0% 18%, center bottom; /*posicionamento do character*/}
+	40.7%, 46.6%{opacity: 1;	background-position: 0% 59.9%, 10% 59.9%,   center 0%, 0% 18%, center bottom; /*posicionamento do character*/}	
+	/*----------------------------------- inicio personagem 8 MELLO revisado*/
+	46.9%, 53.5%{opacity: 0;	background-position: 0% 59.9%, -70% 59.9%, center 0%, 0% 100%, center bottom; /*posicionamento do character*/}
+	47.4%, 53.3%{opacity: 1;	background-position: 0% 59.9%, -70% 59.9%, center 0%, 0% 100%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 9 Near */
+	53.6%, 60.2%{opacity: 0;	background-position: 0% 59.9%, 190% 59.9%,   center 0%, 0% -126%, center bottom; /*posicionamento do character*/}
+	54.1%, 60.0%{opacity: 1;	background-position: 0% 59.9%, 190% 59.9%,   center 0%, 0% -126%, center bottom; /*posicionamento do character*/}	
+	/*----------------------------------- inicio personagem 10 MIKAMI*/
+	60.3%, 66.9%{opacity: 0;	background-position: 0% 59.9%, 30% 59.9%,   center 0%, 0% 0%, center bottom; /*posicionamento do character*/}
+	60.8%, 66.7%{opacity: 1;	background-position: 0% 59.9%, 30% 59.9%,   center 0%, 0% 0%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 11 MATT*/
+	67.0%, 73.6%{opacity: 0;	background-position: 0% 59.9%, 70% 59.9%,   center 0%, 0% -30%, center bottom; /*posicionamento do character*/}
+	67.5%, 73.4%{opacity: 1;	background-position: 0% 59.9%, 70% 59.9%,   center 0%, 0% -30%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 12 LIGHT2*/
+	73.7%, 80.3%{opacity: 0;	background-position: 0% 59.9%, 150% 59.9%,   center 0%, 0% -94%, center bottom; /*posicionamento do character*/}
+	74.2%, 80.1%{opacity: 1;	background-position: 0% 59.9%, 150% 59.9%,   center 0%, 0% -94%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 13 l2*/
+	80.4%, 87.0%{opacity: 0;	background-position: 0% 59.9%, 170% 59.9%,   center 0%, 0% -110%, center bottom; /*posicionamento do character*/}
+	80.9%, 86.8%{opacity: 1;	background-position: 0% 59.9%, 170% 59.9%,   center 0%, 0% -110%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 14 Near 2 revisado*/
+	87.1%, 93.7%{opacity: 0;	background-position: 0% 59.9%, -90% 59.9%, center 0%, 0% 82%, center bottom; /*posicionamento do character*/}
+	87.6%, 93.5%{opacity: 1;	background-position: 0% 59.9%, -90% 59.9%, center 0%, 0% 82%, center bottom; /*posicionamento do character*/}
+	/*----------------------------------- inicio personagem 15 Caveira revisado*/
+	93.8%, 100%{opacity: 0;		background-position: 0% 59.9%, -30% 59.9%, center 0%, 0% 50%, center bottom; /*posicionamento do character*/}
+	94.3%, 99.8%{opacity: 1;	background-position: 0% 59.9%, -30% 59.9%, center 0%, 0% 50%, center bottom; /*posicionamento do character*/}
+}
+/*ORNAMENTO CIRCULAR --------------------------------------------------*/
+
+#logo:after{ /*circle*/
+	margin:0;
+	content: "";
+	opacity:1;
+	display:block;
+	
+	width:30%!important;/*300px*/
+	height:85.7142%!important; /*300px, é porcentagem da altura do logo*/
+	left:35%;/*calc(1000/2-326/2)px;centralizando horizontalmente */
+	top: 14.2857%; /*50px;*/ /*calc(350/2px-326/2px);centralizando verticalmente
+	/*
+	width:300px;
+	height:300px;
+	left:350px;
+	top:50px;*/
+	position:absolute;
+	background:url(https://dl.dropboxusercontent.com/s/x3jolkn6kxzkprj/circle_frame2.png) no-repeat center;
+	background-size: contain;
+	animation: initTranslate 1.0s ease-in-out 2 alternate forwards, spin2 200s ease-in-out infinite 2s paused;
+}
+
+@keyframes initTranslate{
+	0%{ transform: rotate(0deg);}
+	100%{ transform: rotate(20deg);}
+}
+
+#logo:hover:after{/*circle hover*/
+	  animation-play-state: running, running;
+}
+
+@keyframes spin2 {
+  100%{transform: rotate(10turn); }
+}

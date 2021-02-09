@@ -1,0 +1,386 @@
+/* Código modularizado da parte direita do style - Spirit Fanfiction
+ * Autor: Pedro Lázaro
+ * 
+ * Se você obteve esse código sem a expressa autorização do autor, pode
+ * manuseá-lo à vontade. Conhecimento parado não serve de nada, não é,
+ * mesmo? Ficarei feliz se meu código servir para inspirar outros styles.
+ * 
+ *  */
+
+/* Estilos do Menu Direito do Site                                         */
+
+.boxMenuDireito {
+	position:relative;
+	background-color: transparent;
+}
+.boxMenuDireito:hover{
+}
+/*========== MENU DIREITO =============================================*/
+/*.boxMenuDireito .tituloMenuDireito{
+        color: white;
+        font-size:10px;
+        font-family: Calibri, Candara, serif!important;
+        text-align: center;
+        text-transform: uppercase;
+        padding-top:10px;
+        padding-bottom:10px;
+        border: 1px solid green;
+}
+
+.boxMenuDireito .tituloMenuDireito:hover{
+		color: gray;
+}*/
+.boxMenuDireito h4.tituloMenuDireito{
+	background: url(https://dl.dropboxusercontent.com/s/fchxc3ky9et7oup/verticalChain.png) repeat-y, url(https://dl.dropboxusercontent.com/s/fchxc3ky9et7oup/verticalChain.png) repeat-y;
+	background-position: 10% 50%, 90% 50%;
+	background-size: 5% 600%, 5% 600%;
+	margin-bottom: 8%;
+	
+	transition: color 2s ease,  background-position 2s ease;
+}
+.boxMenuDireito .tituloMenuDireito:first-letter {
+    font-family: Calibri, georgia;
+    font-size: 14px;
+    font-weight:800;
+    color: #7F1313;/*#8b2323;*/
+    text-transform: uppercase!important;
+}
+
+.boxMenuDireito .tituloMenuDireito{
+	font-family: Calibri, georgia!important;
+	font-size:12px;
+	font-weight:100;
+	color:white;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 4% 0 4% 0;
+	position: relative;
+	z-index:0;
+}
+.boxMenuDireito h4.tituloMenuDireito:before{
+	content:"";
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:30%;
+	background: black;
+	z-index:-1;
+	transition: transform 2s ease;
+}
+
+.boxMenuDireito .tituloMenuDireito:after{/*segmento inferior*/
+	content:"";
+	color:black;
+	text-align:center;
+	padding-top:2.5%;
+	font-family:plasnote;
+	letter-spacing:2px;
+	display:block;
+	position:absolute;
+	top:30%;
+	left:0;
+	width:100%;
+	height:70%;
+	background: url(https://dl.dropboxusercontent.com/s/5n62qbf0bb9wqjl/swirl2.png) no-repeat left center, url(https://dl.dropboxusercontent.com/s/0dd5fjnvy3z83f5/swirl2_inverted.png) no-repeat right center;
+	background-size:contain, contain;
+	background-color:black;
+	z-index:-2;
+	transition: top 2s ease, color 1s ease;
+}
+.boxMenuDireito:nth-child(1) h4.tituloMenuDireito:after{
+	content:"If you're asking me...";
+}
+.boxMenuDireito:nth-child(2) h4.tituloMenuDireito:after{
+	content:"...what is right and...";
+}
+.boxMenuDireito:nth-child(3) h4.tituloMenuDireito:after{
+	content:"... what is wrong...";
+}
+.boxMenuDireito:nth-child(4) h4.tituloMenuDireito:after{
+	content:"... I should tell you...";
+}
+.boxMenuDireito:nth-child(5) h4.tituloMenuDireito:after{
+	content:"...Nevermind.";
+}
+.boxMenuDireito:nth-child(6) h4.tituloMenuDireito:after{
+	content:"Figure it out by yourself";
+	font-size:9px;
+}
+.boxMenuDireito .tituloMenuDireito:hover:after {
+	top:70%;
+	color:white;
+	transition: top 1s ease, color 2s ease;
+}
+.boxMenuDireito .tituloMenuDireito:hover{
+	background-position: 10% 30%, 90% 30%;
+	color:black;
+	transition: color 2s ease, background-position 1s ease;
+}
+
+/*##################################################################*/
+
+.boxMenuDireito b{
+	    color: #7F1313;
+}
+.boxMenuDireito .textoMenuDireito{ /*Atenção: isso aqui é o TEXTO! não o título! */
+        background-color: transparent;
+        color:black;
+        font-size:12px;
+        font-family: Calibri, Candara, serif!important;
+        text-align: center;
+}
+.boxMenuDireito .textoMenuDireito:hover{
+	color:#7F1313!important;
+}
+
+/* ####################################################################### */
+/* Estilo das imagens do menu direito, tal como os avatares               */
+.boxMenuDireito a{
+	text-align:center!important;
+	font-family: Georgia;
+	font-size:14px!important;
+	text-transform:capitalize!important;
+	font-size-adjust:0.48;
+}
+.boxMenuDireito a:hover{
+	text-decoration:underline;
+}
+#divAmigosScroll.scroll{
+	position:relative;
+	background:transparent;
+}
+
+#divAmigosResultado div.boxUsuario a{
+	position:relative;
+	left:-6px;
+	width:90px;
+	/*recomendaçoes de Bereu*/
+	text-transform: lowercase!important;
+	font-weight:lighter; 
+	font-size: 13px!important; 
+	font-variant:small-caps!important; 
+	font-family:Georgia!important; 
+	font-size-adjust: 0.48;
+	word-wrap: break-word;
+}
+.boxUsuario img{
+	
+	border-top-left-radius:5px 30px;
+	border-bottom-left-radius:30px 5px;
+	border-bottom-right-radius: 5px 30px;
+	border-top-right-radius:30px 5px;
+	border: 4px solid black;
+	transition: transform 1s ease;
+	width:60px!important;
+	height:60px!important;
+	transition: border-radius 2s ease;
+	z-order:22;
+}
+#divAmigosResultado{
+	position:relative;
+}
+#divAmigosResultado div.boxUsuario{
+	top:10px;
+	margin:0px;
+	position:relative;
+	
+	width:90px;
+	border-radius: 100px;	
+}
+
+#divAmigosResultado:hover > .boxUsuario img{
+	border:2px solid white;
+	border-radius: 100px;
+	animation: up 1s ease-in 1, floatBox 1s ease-in infinite 1s alternate;
+}
+#div.boxUsuario img:hover{
+	
+}
+@keyframes up{
+	0%{	transform: translateY(0px);}
+	100%{ transform: translateY(-8px);}
+}
+@keyframes floatBox{
+	0%{
+		transform: translateY(-8px) rotate(0deg);
+		/*border-radius:50px;*/
+		border-top-left-radius:40px 40px;
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:500px 500px;
+	}
+	33%{
+		transform: translateY(-4px) rotate(20deg);
+		/*border-radius:20px;*/
+		border-top-left-radius:500px 500px;
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:40px 40px;
+	}
+	66%{
+		transform: translateY(-10px) rotate(0deg);
+		/*border-radius:80px;*/
+				border-top-left-radius:40px 40px;
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:500px 500px;
+	}
+	100%{
+		transform: translateY(-6px) rotate(-20deg);
+		/*border-radius: 0px;*/
+		border-top-left-radius:500px 500px;
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:40px 40px;
+	}
+}
+@keyframes spin {
+	0%{transform: rotate(0deg); }
+	100%{transform: scale(0.3) rotate(1000deg); border-radius:100px}
+}
+@keyframes spin_init{
+	0%{transform: scale(1) rotate(0deg);}
+	0%{transform: scale(0.3) rotate(1000deg); border-radius: 100px;}
+	100%{transform: scale(1) rotate(0deg); border-radius: 100px;}
+}
+/*########### GRUPOS #####################*/
+
+#divGruposScroll.scroll{
+	position:relative;
+	background:transparent;
+}
+
+#divGruposResultado div.boxUsuario a{
+	position:relative;
+	left:-6px;
+	width:90px;
+	/*recomendaçoes de Bereu*/
+	text-transform: lowercase!important;
+	font-weight:lighter; 
+	font-size: 13px!important; 
+	font-variant:small-caps!important; 
+	font-family:Georgia!important; 
+	font-size-adjust: 0.48;
+	word-wrap: break-word;
+}
+
+#divGruposResultado{
+	position:relative;
+}
+#divGruposResultado div.boxUsuario{
+	top:10px;
+	margin:0px;
+	position:relative;
+	
+	width:90px;
+	border-radius: 100px;	
+}
+
+#divGruposResultado:hover > .boxUsuario img{
+	border:2px solid white;
+	border-radius: 100px;
+	animation: up 1s ease-in 1, danceBox2 2s ease-in infinite 1s alternate;
+}
+
+@keyframes danceBox2{
+	0%{
+		transform: translate(0px, -8px) rotate(0deg) rotateY(0deg);
+		/*border-radius:50px;*/
+		border-top-left-radius:500px 500px;
+		border-bottom-left-radius:40px 40px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:500px 500px;
+	}
+	10%{
+		transform: translate(0px, -4px) rotate(20deg) rotateY(0deg);
+		border-top-left-radius:500px 500px;
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius:40px 40px;
+		border-top-right-radius:500px 500px;
+	}
+	20%{
+		transform: translate(0px, -8px) rotate(0deg) rotateY(0deg);
+		/*border-radius:50px;*/
+		border-top-left-radius:500px 500px;
+		border-bottom-left-radius:40px 40px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:500px 500px;	
+	}
+	30%{
+		transform: translate(0px, -4px) rotate(-20deg) rotateY(90deg);
+		/*border-radius:20px;*/
+		border-top-left-radius:500px 500px;
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:40px 40px;
+	}
+	40%{
+		transform: translate(0px, -4px) rotate(0deg) rotateY(0deg);
+		/*border-radius:20px;*/
+		border-top-left-radius:500px 500px;
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:40px 40px;
+	}
+	50%{
+		transform: translate(0px, -10px) rotate(20deg) rotateY(0deg);
+		/*border-radius:80px;*/
+		border-top-left-radius:40px 40px;
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:500px 500px;
+	}
+	60%{
+		transform: translate(0px, -8px) rotate(0deg) rotateY(0deg);
+		/*border-radius:50px;*/
+		border-top-left-radius:500px 500px;
+		border-bottom-left-radius:40px 40px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:500px 500px;
+	}
+	70%{
+		transform: translate(0px, -2px) rotate(-20deg) rotateY(0deg);
+		/*border-radius:50px;*/
+		border-top-left-radius:40px 40px
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius:500px 500px
+		border-top-right-radius:500px 500px;
+	}
+	80%{
+		transform: translate(0px, -4px) rotate(0deg) rotateY(0deg);
+		/*border-radius:50px;*/
+		border-top-left-radius:40px 40px
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius:40px 40px;
+		border-top-right-radius:500px 500px;
+	}
+	90%{
+		transform: translate(0px, -8px) rotate(20deg) rotateY(0deg);
+		/*border-radius:50px;*/
+		border-top-left-radius:500px 500px
+		border-bottom-left-radius:40px 40px;
+		border-bottom-right-radius:500px 500px
+		border-top-right-radius:500px 500px;
+	}
+	100%{
+		transform: translate(0px, -6px) rotate(0deg) rotateY(0deg);
+		/*border-radius: 0px;*/
+		border-top-left-radius:500px 500px;
+		border-bottom-left-radius:500px 500px;
+		border-bottom-right-radius: 500px 500px;
+		border-top-right-radius:40px 40px;
+	}
+}
+
+div.textoMenuDireito img{
+	border:2px solid black;
+}
+div.textoMenuDireito img:hover{
+	transform: scale(1.2);
+	-webkit-filter: sepia(1) hue-rotate(200deg);
+    filter: sepia(1) hue-rotate(200deg);
+    transition: transform 2s ease, filter 2s ease, border-radius 1s ease;
+    border-radius:50px;
+}

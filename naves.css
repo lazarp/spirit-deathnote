@@ -1,0 +1,240 @@
+/*Código modularizado da parte nav e secaonav
+ * Autor: Pedro Lázaro
+ * */
+
+/*TABLE OF CONTENTS
+ * nav
+ * 		ul
+ * 			a
+ * 		li.borda
+ * 		li
+ * 		a
+ * 		li a
+ * 			before
+ * 			after
+ * 		ul.dropdown-menu
+ * 		.btn
+ * 			span
+ * secaonav
+ * 		a
+ * 		span
+ * 		li
+ */
+
+/*========== NAV ======================================================*/
+#nav {
+	border-bottom: 1px solid #d7d2d1!important;
+	border-radius: 00px!important;
+	display: flex!important;
+		-webkit-justify-content: center;
+		-webkit-align-items: center;
+	opacity:1;
+	position:absolute;
+	padding-top:3%;
+	padding-bottom:2.5%;
+	text-align:center;
+	width: 100%; /*estava 1000px*/
+	
+}
+#nav>ul{
+	position:relative;
+	display: flex;
+		-webkit-align-items: center!important;
+		-webkit-justify-content: space-between;
+	border: 1px solid transparent;
+}
+
+#nav>ul a{
+	border: 1px solid transparent!important;
+	display:flex;
+		-webkit-align-items: center!important;
+		-webkit-justify-content: center;
+}
+#nav>ul>li.borda{
+	padding: 1px;
+	width:0px;
+	background-color: white;
+}
+#nav>ul>li{	
+	position:relative;
+	display: flex;
+	-webkit-align-items: center!important;
+	-webkit-justify-content: center;
+	border: 0px solid white;
+	min-width: 1px;	/*RESOLVI O PROBLEMA DA TAG PORRA*/
+}
+#nav a {
+	
+	/*margin: 8px;*/
+	position: relative;
+	/*top: 9px;*/
+	color: white!important; 
+	font-size: 8px !important;
+	font-size-adjust: 0.50;
+	font-weight:900;
+	letter-spacing:1px;
+	font-family: Georgia!important;
+	text-transform: uppercase !important;
+	font-variant:small-caps!important;
+	border: 1px solid transparent !important; /*apenas teste*/
+	background: transparent!important;
+	-webkit-transition: background 1.5s ease-in, border 1s ease-in-out, color 1s ease, letter-spacing 1s ease-out!important;
+	-moz-transition: background 1.5s ease, border 1s ease-in-out, color 1s ease, letter-spacing 1s ease-out!important;
+	-o-transition: background 1.5s ease, border 1s ease-in-out, color 1s ease, letter-spacing 1s ease-out!important;
+	transition: background 1.5s ease, border 1s ease-in-out, color 1s ease, letter-spacing 1s ease-out!important;
+}
+
+#nav a:hover {
+	color: black   !important;/*#f4e013 !important;*/
+	letter-spacing:4px;
+	background: white!important;
+	-webkit-transition: color 1s ease, letter-spacing 1s ease, background 1.5s ease-in;	
+	-moz-transition: color 1s ease, letter-spacing 1s ease, background 1.5s ease;	
+	-o-transition: color 1s ease, letter-spacing 1s ease, background 1.5s ease;	
+	transition: color 1s ease, letter-spacing 1s ease, background 1.5s ease;	
+}
+/* ---- hover customizado dos botoes da nav ----*/
+#nav li a{
+	border: 1px solid transparent;
+	/*margin: 8px!important;*/
+	-webkit-transition: color 1.5s ease-in-out; 
+	-moz-transition: color 1.5s ease-in-out; 
+	-o-transition: color 1.5s ease-in-out; 
+	transition: color 1.5s ease-in-out; 
+	
+	-webkit-transform: perspective(1px) translateZ(0); /*parte do overline*/
+	-moz-transform: perspective(1px) translateZ(0); /*parte do overline*/
+	-o-transform: perspective(1px) translateZ(0); /*parte do overline*/
+	transform: perspective(1px) translateZ(0); /*parte do overline*/
+}
+	
+#nav li a:before{ /* construção da underline left-to-right e da borda lateral direita bottom-to-top*/
+	content:"";
+	position: absolute;
+	background-color: transparent;
+	bottom: 0;
+	left:0;
+	width:0%!important;
+	height:0%;
+	border-bottom: 1px solid #d7d2d1;
+	border-right: 0px solid #d7d2d1!important;
+	-webkit-transition: height 0.3s ease-in-out, width 0.3s ease-in-out 0.3s, border 0.3s ease-in-out 0.3s!important; /*width = underline, height = borda lateral*/
+	-moz-transition: height 0.3s ease-in-out, width 0.3s ease-in-out 0.3s, border 0.3s ease-in-out 0.3s!important; /*width = underline, height = borda lateral*/
+	-o-transition: height 0.3s ease-in-out, width 0.3s ease-in-out 0.3s, border 0.3s ease-in-out 0.3s!important; /*width = underline, height = borda lateral*/
+	transition: height 0.3s ease-in-out, width 0.3s ease-in-out 0.3s, border 0.3s ease-in-out 0.3s!important; /*width = underline, height = borda lateral*/
+}
+#nav:hover>ul>li a:before{
+	width: 100%!important;
+	height:100%;
+	border-right: 1px solid #d7d2d1!important;
+	/*border-color: #CBCD3C!important;*/
+	-webkit-transition: width 0.3s ease-in-out, height 0.3s ease-in-out 0.3s, border-right 0.3s ease-in-out 0.3s, border-color 1s ease!important; /*width = underline, height = borda lateral*/	
+	-moz-transition: width 0.3s ease-in-out, height 0.3s ease-in-out 0.3s, border-right 0.3s ease-in-out 0.3s, border-color 1s ease!important; /*width = underline, height = borda lateral*/	
+	-o-transition: width 0.3s ease-in-out, height 0.3s ease-in-out 0.3s, border-right 0.3s ease-in-out 0.3s, border-color 1s ease!important; /*width = underline, height = borda lateral*/	
+	transition: width 0.3s ease-in-out, height 0.3s ease-in-out 0.3s, border-right 0.3s ease-in-out 0.3s, border-color 1s ease!important; /*width = underline, height = borda lateral*/	
+}
+#nav li a:after{ /*overline e borda lateral esquerda. precisa do transforme locao do perspective no "nav li a" */
+	content: "";
+  	position: absolute;
+  	z-index: -1;
+  	left: 100%;
+  	right: 0;
+  	top: 0;
+  	background: transparent;
+  	border-top: 1px solid #d7d2d1;
+  	border-left: 0px solid transparent;
+  	height: 0%;
+  	-webkit-transition: left 0.3s ease-in-out 0.3s, border 0.3s ease 0.3s, height 0.3s ease;
+  	-moz-transition: left 0.3s ease-in-out 0.3s, border 0.3s ease 0.3s, height 0.3s ease;
+  	-o-transition: left 0.3s ease-in-out 0.3s, border 0.3s ease 0.3s, height 0.3s ease;
+  	transition: left 0.3s ease-in-out 0.3s, border 0.3s ease 0.3s, height 0.3s ease;
+}
+#nav:hover>ul>li a:after{
+	left:0;
+	height:100%;
+	border-left: 1px solid #d7d2d1;
+	/*border-color: #CBCD3C;*/
+	-webkit-transition: left 0.3s ease-in-out, border 0.2s ease 0.2s, height 0.3s ease-in-out 0.3s;	
+	-moz-transition: left 0.3s ease-in-out, border 0.2s ease 0.2s, height 0.3s ease-in-out 0.3s;	
+	-o-transition: left 0.3s ease-in-out, border 0.2s ease 0.2s, height 0.3s ease-in-out 0.3s;	
+	transition: left 0.3s ease-in-out, border 0.2s ease 0.2s, height 0.3s ease-in-out 0.3s;	
+}
+
+
+/* teste de individualização das propriedades de cada botão da nav
+ * 
+nav li:nth-child(2) a{
+}
+nav li:nth-child(3) a{
+}
+
+nav li a:hover:after{ width: 100%; }
+nav li:first-child a:after{ background: #3498db; }
+nav li:nth-child(2) a:after{ background: #ffd071; }
+nav li:nth-child(3) a:after{ background: #f0776c; }
+#nav li:last-child a:after{ }*/
+
+#nav>ul>li>ul.dropdown-menu{ /*Detalhezinho do menu que aparece quando a pagina é comprimida*/
+	background:black;
+	color:white;	
+}
+
+/*BOTÃO ADICIONAR -----------------------------------------------------*/
+/* Botão Adicionar É O LAST CHILD DO NAV       */
+
+#nav .btn { 
+    /*padding: 9px 10px 10px 10px!important;
+    height: 30px!important;
+    top: -29px!important;
+    left: 8px!important;
+    position: relative!important;
+    border: 1px solid transparent!important;*/ /*uso para testes*/
+    background-color: black!important;
+    color: white!important;
+    font-size: 8px !important;
+	font-size-adjust: 0.50;
+	font-weight:900;
+    -webkit-transition: background 1s ease-in-out 0s, color 1s ease, letter-spacing 1s ease;
+    -moz-transition: background 1s ease-in-out 0s, color 1s ease, letter-spacing 1s ease;
+    -o-transition: background 1s ease-in-out 0s, color 1s ease, letter-spacing 1s ease;
+    transition: background 1s ease-in-out 0s, color 1s ease, letter-spacing 1s ease;
+    
+}
+
+#nav .btn span{ /*estritamente a palavra adicionar. Não inclui o simbolo +*/
+	
+	color: white!important;
+	
+}
+#nav .btn span:hover{}
+#nav .btn:hover{
+	background-color: #7F1313 !important;
+	color: white!important;
+	-webkit-transition: background 1s ease-in-out 0s, color 1s ease, letter-spacing 1s ease;
+	-moz-transition: background 1s ease-in-out 0s, color 1s ease, letter-spacing 1s ease;
+	-o-transition: background 1s ease-in-out 0s, color 1s ease, letter-spacing 1s ease;
+	transition: background 1s ease-in-out 0s, color 1s ease, letter-spacing 1s ease;
+}
+/*========== SEÇÃO NAV ================================================*/
+
+#secaoNav{
+	
+	position: relative;
+	height: 20px;
+	width:485px;
+	border-radius: 0;	
+	padding:0px;
+	z-index:1;
+}
+
+#secaoNav a {/*modifica o conjunto, mas algumas coisas não.*/
+	text-decoration:none!important; /*só aqui que modifica o underline seboso de spirit e modelo*/
+}
+#secaoNav span{	/*modifica especificamente spirit e membros*/
+	color:black!important;
+}
+#secaoNav li{
+	color: white!important; /*tive que colocar important por que o #meio li é que tava com precedência na cor das letras.*/
+}
+
+#secaoNav:hover{}
